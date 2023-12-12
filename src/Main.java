@@ -1,16 +1,21 @@
+import Payment.Payment;
+import Payment.Payment.Item;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Item item1 = new Item("Laptop", 1000, 2);
+        Item item2 = new Item("Headphones", 50, 1);
+        Item item3 = new Item("Mouse", 20, 3);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Создаем объект класса Payment
+        Payment payment = new Payment();
+
+        // Добавляем товары в покупку
+        payment.addItem(item1);
+        payment.addItem(item2);
+        payment.addItem(item3);
+
+        // Выводим чек
+        payment.displayReceipt();
     }
 }
